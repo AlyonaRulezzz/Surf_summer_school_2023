@@ -12,13 +12,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var fragmentManager: FragmentManager
     private lateinit var binding: ActivityMainBinding
 
+    private var cocktailListForFragment = ViewmodelRecyclerviewFragment()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+//        if (cocktailListForFragment.loadListFromSharedPreferences(this, "listOfCocktailModel") == emptyList())
 //        goToFragment(NoCoctailsFragment())
-        goToFragment(ViewmodelRecyclerviewFragment())
+        goToFragment(cocktailListForFragment)
     }
 
     private fun goToFragment(fragment: Fragment) {
