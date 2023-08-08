@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import ru.surf.summer_school_2023.databinding.ActivityMainBinding
+import viewmodel.ViewmodelRecyclerviewFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,7 +17,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        goToFragment(NoCoctailsFragment())
+//        goToFragment(NoCoctailsFragment())
+        goToFragment(ViewmodelRecyclerviewFragment())
     }
 
     private fun goToFragment(fragment: Fragment) {
