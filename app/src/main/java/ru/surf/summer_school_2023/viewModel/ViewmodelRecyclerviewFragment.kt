@@ -1,6 +1,5 @@
 package viewmodel
 
-import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.SharedPreferences
@@ -13,16 +12,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.item_number_layout.view.*
 import ru.surf.summer_school_2023.R
 import ru.surf.summer_school_2023.adapter.NumberAdapter
 import ru.surf.summer_school_2023.databinding.FragmentViewmodelRecyclerviewBinding
-import ru.surf.summer_school_2023.databinding.ItemNumberLayoutBinding
 import ru.surf.summer_school_2023.model.CocktailModel
 
 
@@ -53,8 +49,8 @@ class ViewmodelRecyclerviewFragment : Fragment() {
 
         // После получения binding, установите адаптер для RecyclerView
         binding = FragmentViewmodelRecyclerviewBinding.bind(rootView)
-        binding.rvNumber.adapter = adapter
-        binding.rvNumber.layoutManager = if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
+        binding.rvCocktail.adapter = adapter
+        binding.rvCocktail.layoutManager = if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
             GridLayoutManager(context, 2)
         } else {
             GridLayoutManager(context, 4)
@@ -74,7 +70,7 @@ class ViewmodelRecyclerviewFragment : Fragment() {
 
         viewModel._liveDataList.observe(viewLifecycleOwner) {
             it?.let { adapter.setList(it) }
-            binding.rvNumber.scrollToPosition(it.lastIndex)
+            binding.rvCocktail.scrollToPosition(it.lastIndex)
         }
     }
 

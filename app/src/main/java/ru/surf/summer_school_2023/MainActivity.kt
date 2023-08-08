@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import kotlinx.android.synthetic.main.fragment_no_coctails.view.*
 import ru.surf.summer_school_2023.databinding.ActivityMainBinding
 import ru.surf.summer_school_2023.model.CocktailModel
 import viewmodel.ViewmodelRecyclerviewFragment
@@ -25,8 +26,10 @@ class MainActivity : AppCompatActivity() {
 
         if (findedFragmentRV?.loadListFromSharedPreferences(this, "listOfCocktailModel")?.size == null) {
             goToFragment(NoCoctailsFragment())
+//            binding.fragmentNoCoctails.addCocktailButton.setOnClickListener {
+    //            add new cocktail fragment
+//            }
         } else {
-            println("MY_LOG" + findedFragmentRV?.loadListFromSharedPreferences(this, "listOfCocktailModel")?.size)
             goToFragment(fragmentRV)
         }
     }

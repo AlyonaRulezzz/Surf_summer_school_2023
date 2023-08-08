@@ -32,6 +32,7 @@
         android:layout_marginStart="30sp"/>
 
     <ImageButton
+        android:id="@+id/addCocktailButton"
         android:layout_width="100sp"
         android:layout_height="100sp"
         android:layout_gravity="bottom"
