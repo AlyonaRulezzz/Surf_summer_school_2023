@@ -2,10 +2,25 @@ package ru.surf.summer_school_2023
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import ru.surf.summer_school_2023.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var fragmentManager: FragmentManager
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        goToFragment(NoCoctailsFragment())
+    }
+
+    private fun goToFragment(fragment: Fragment) {
+        fragmentManager = supportFragmentManager
+        fragmentManager.beginTransaction().replace(R.id.fragmentNoCoctails, fragment).commit()
     }
 }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NoCoctailsFragment">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/summer_holidays"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/My_cocktails"
+        android:textSize="45sp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_marginTop="240sp"/>
+
+    <TextView
+        android:layout_width="200sp"
+        android:layout_height="match_parent"
+        android:text="@string/Add_your_first_cocktail_here"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="300sp"
+        android:layout_marginStart="30sp"/>
+
+    <ImageButton
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_gravity="bottom"
+
+        android:layout_marginStart="150sp"
+        android:layout_marginBottom="50sp"
+        android:src="@drawable/ic_baseline_add_circle_24" />
+
+
+</FrameLayout>
