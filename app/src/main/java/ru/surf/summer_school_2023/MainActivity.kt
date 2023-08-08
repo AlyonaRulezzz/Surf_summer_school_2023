@@ -21,9 +21,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (findedFragmentRV?.loadListFromSharedPreferences(this, "listOfCocktailModel")?.isEmpty() == true) {
+        goToFragment(NoCoctailsFragment())
+
+        if (findedFragmentRV?.loadListFromSharedPreferences(this, "listOfCocktailModel")?.size == null) {
             goToFragment(NoCoctailsFragment())
         } else {
+            println("MY_LOG" + findedFragmentRV?.loadListFromSharedPreferences(this, "listOfCocktailModel")?.size)
             goToFragment(fragmentRV)
         }
     }
