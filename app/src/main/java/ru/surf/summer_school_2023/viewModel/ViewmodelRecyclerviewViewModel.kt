@@ -13,14 +13,14 @@ import kotlin.collections.ArrayList
 
 class ViewmodelRecyclerviewViewModel(l: List<CocktailModel>) : ViewModel() {
 
-    val _liveDataList = MutableLiveData<List<CocktailModel>>(if (l.isNotEmpty()) l else myNumber())
+    val _liveDataList = MutableLiveData<List<CocktailModel>>(l)
 
     val liveDataList: LiveData<List<CocktailModel>> get() = _liveDataList
 
     private val deletedPool: Queue<Int> = LinkedList()
 
     init {
-        addItem(_liveDataList.value?.last()?.name?.plus(1)!!)
+//        addItem(_liveDataList.value?.last()?.name?.plus(1)!!)
     }
 
     fun deleteItem(number: Int) {
